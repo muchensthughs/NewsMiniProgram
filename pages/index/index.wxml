@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="class-container">
+  <view class="class-items" wx:for="{{classes}}">
+    <view class="class" id="{{item}}" bindtap='onTapClass'>{{item}}</view>
+  </view>
+</view>
+
+<scroll-view scroll-y>
+  <view class="news-list">
+    <view class="head-news">
+      <view class="head-news-info">
+        <view class="head-news-title">{{headNewsTitle}}</view>
+        <view class="head-news-stamp">
+          <view class="head-news-time">{{headNewsTimeStamp}}</view>
+          <view class="head-news-source">{{headNewsSource}}</view>
+        </view>
+      </view>
+      <image class="head-image" src="{{headNewsImage}}" mode="scaleToFill"></image>
+    </view>
+    
+  
+    <view class="news-item" wx:for="{{newsList}}">
+
+
+      <view class="item-left-wrapper">       
+        <view class="item-title">{{item.title}}</view>
+        <view class="item-info">
+          <view class="item-time">{{item.timeStamp}}</view>
+          <view class="item-source">{{item.source}}</view>
+        </view>
+      </view>
+
+      <image class="item-image" src="{{item.imageURL}}"></image>
+
+
+    </view>
+  </view>
+</scroll-view>
