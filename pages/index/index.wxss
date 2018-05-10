@@ -9,7 +9,9 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
+.scroll {
+  height: 1090rpx;
+}
 .class {
   width: 100rpx;
   font-size: 30rpx;
