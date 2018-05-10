@@ -17,6 +17,7 @@ Page({
     headNewsTimeStamp: '',
     headNewsImage: '',
     headNewsSource: '',
+    headNewsID: 0,
     currentClass: '国内',
   },
 
@@ -27,7 +28,13 @@ Page({
     })
     this.getData() 
   },
-
+  onTapArticle: function(res) {
+    let currentID = res.currentTarget.id
+    console.log(currentID)
+    wx.navigateTo({
+      url: '/pages/article/article?id=' + currentID,
+    })
+  },
 
   onLoad() {
     this.getData()
@@ -46,6 +53,7 @@ Page({
         let headNewsImage = result[0].firstImage
         let headNewsTimeStamp = result[0].date.slice(11,16)
         let headNewsSource = result[0].source
+        let headNewsID = result[0].id
         if (headNewsSource == '') {
           headNewsSource = "未知来源"
         }
@@ -58,7 +66,8 @@ Page({
             title: news.title,
             timeStamp: news.date.slice(11, 16),
             source: news.source,
-            imageURL: news.firstImage
+            imageURL: news.firstImage,
+            id: news.id
           })
         }
         this.setData({
@@ -66,9 +75,9 @@ Page({
           headNewsImage,
           headNewsTimeStamp,
           headNewsSource,
+          headNewsID,
           newsList: newsList
         })
-        console.log(result)  
       }
     })
   },

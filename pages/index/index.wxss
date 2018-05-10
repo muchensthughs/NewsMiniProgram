@@ -67,13 +67,10 @@
   padding-left: 20rpx;
 }
 
-.news-list {
-  height: 1095rpx;
-}
 .news-item {
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+ 
 }
 
 .item-left-wrapper {

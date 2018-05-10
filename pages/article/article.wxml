@@ -1,0 +1,21 @@
+<!--pages/article/article.wxml-->
+<scroll-view scroll-y> 
+  <view class="article-head-wrapper">
+    <view class="title">{{title}}</view>
+    <view class="info-wrapper">
+      <view class="time">{{time}}</view>
+      <view class="source">{{source}}</view>
+      <view class="page-view">阅读: {{pageView}}</view>
+    </view>
+  </view>
+
+  <view class="article-content" wx:for="{{mainBody}}">
+
+    <image wx:if="{{ item.contentType=='image' }}" class="image" src="{{item.content}}" mode="widthFix"></image>
+    <text wx:if="{{ item.contentType=='text' }}" class="article-text">{{item.content}}\n\n</text>
+  </view>
+
+</scroll-view>
+  
+
+

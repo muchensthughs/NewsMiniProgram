@@ -1,0 +1,56 @@
+/* pages/article/article.wxss */
+
+
+.article-head-wrapper {
+  position: relative;
+  width: 710rpx;
+  left: 20rpx;
+}
+
+.title {
+  text-align: left;
+  font-size: 36rpx;
+  line-height: 47rpx;
+  word-break: break-all;
+}
+
+.info-wrapper {
+  padding-top: 40rpx;
+  position: relative;
+  display: flex;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.6)
+}
+
+.time {
+  padding-right: 20rpx;
+}
+
+.source {
+  padding-right: 20rpx;
+}
+
+.page-view {
+  position: absolute;
+  right: 0;
+}
+
+.article-content {
+  position: relative;
+  top: 40rpx;
+  width: 710rpx;
+  left: 20rpx;
+}
+
+
+.image {
+  width: 100%;
+  padding-bottom: 30rpx;
+}
+
+
+.article-text {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
