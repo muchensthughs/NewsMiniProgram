@@ -2,17 +2,20 @@
 .class-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 80rpx;
-  background-color: rgba(255, 187, 51, 0.8);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  bottom: 20rpx;
+  background-color: rgba(255, 187, 51, 1);
+
 }
 
 .scroll {
+  position: relative;
+  top: 30rpx;
   height: 1090rpx;
 }
 .class {
+  padding-top: 22rpx;
+  padding-bottom: 21rpx;
   width: 100rpx;
   font-size: 30rpx;
   line-height: 42rpx;
@@ -20,12 +23,21 @@
   opacity: 0.6;
 }
 
+.current-class {
+  background-color: rgba(255, 255, 255, 1);
+  padding-top: 17rpx;
+  padding-bottom: 16rpx;
+  width: 100rpx;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
 .head-news {
   position: relative;
   height: 400rpx;
   width: 710rpx;
   left: 20rpx;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .head-image {
