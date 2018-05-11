@@ -24,6 +24,7 @@ Page({
     this.getArticle()
   },
 
+  // request API result
   getArticle() {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
@@ -37,6 +38,7 @@ Page({
     })
   },
 
+  //set up data
   setArticle(result) {
     let title = result.title
     let time = result.date.slice(11, 16)

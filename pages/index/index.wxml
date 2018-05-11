@@ -7,8 +7,10 @@
 </view>
 
 
-<scroll-view scroll-y class="scroll">
+<view wx:if="{{updating}}" class="updateNotice">更新中...</view>
+<scroll-view scroll-y class="scroll" upper-threshold="-60" bindscrolltoupper="updateNews">
 
+  <!--head news view (image, title, and other information)-->
   <view class="head-news" bindtap='onTapArticle' id="{{headNewsID}}">
     <view class="head-news-info">
       <view class="head-news-title">{{headNewsTitle}}</view>
@@ -20,7 +22,7 @@
     <image class="head-image" src="{{headNewsImage}}" mode="scaleToFill"></image>
   </view>
     
-  
+  <!--other news list-->
   <view class="news-item" wx:for="{{newsList}}" bindtap='onTapArticle' id="{{item.id}}">
 
 

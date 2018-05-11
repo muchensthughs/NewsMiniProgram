@@ -19,8 +19,10 @@ Page({
     headNewsSource: '',
     headNewsID: 0,
     currentClass: '国内',
+    updating: false
   },
 
+  // if tap on class label
   onTapClass:function(res){
     let currentClass = res.target.id
     this.setData({
@@ -28,6 +30,8 @@ Page({
     })
     this.getData() 
   },
+
+  //if tap on an article
   onTapArticle: function(res) {
     let currentID = res.currentTarget.id
     console.log(currentID)
@@ -36,11 +40,23 @@ Page({
     })
   },
 
+  updateNews() {
+    this.setData({
+      updating: true
+    })
+    this.getData(() => {
+      this.setData({
+        updating: false
+      })
+    })
+  },
+
   onLoad() {
     this.getData()
   },
 
-  getData() {
+  //request news list
+  getData(callback) {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       data: {
@@ -49,10 +65,14 @@ Page({
       success: res => {
         let result = res.data.result
         this.setNewsList(result)
+      },
+      complete: () => {
+        callback && callback()
       }
     })
   },
 
+  //set head news and other news in list
   setNewsList(result) {
     let newsList = []
     let headNewsTitle = result[0].title
@@ -67,6 +87,10 @@ Page({
       let news = result[i]
       if (news.source == '') {
         news.source = "未知来源"
+      }
+      console.log(news.firstImage)
+      if (news.firstImage == '') {
+        news.firstImage = '/images/default.png'
       }
       newsList.push({
         title: news.title,

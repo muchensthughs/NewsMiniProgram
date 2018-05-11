@@ -8,6 +8,11 @@
 
 }
 
+.updateNotice {
+  text-align: center;
+  padding-top: 30rpx;
+  height: 40rpx;
+}
 .scroll {
   position: relative;
   top: 30rpx;
