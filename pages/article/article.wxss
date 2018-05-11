@@ -1,16 +1,20 @@
 /* pages/article/article.wxss */
 
+.scroll {
+  height: 1180rpx;
+}
 
 .article-head-wrapper {
   position: relative;
+  padding-top: 50rpx;
   width: 710rpx;
   left: 20rpx;
 }
 
 .title {
   text-align: left;
-  font-size: 36rpx;
-  line-height: 47rpx;
+  font-size: 38rpx;
+  line-height: 53rpx;
   word-break: break-all;
 }
 

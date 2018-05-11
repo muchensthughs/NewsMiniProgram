@@ -32,39 +32,42 @@ Page({
       },
       success: res => {
         let result = res.data.result
-        console.log(result)
-        let title = result.title
-        let time = result.date.slice(11, 16)
-        let source = result.source
-        if (source == "") {
-          source = "未知来源"
-        }
-        let pageView = result.readCount
-        let mainBody = []
-        for (let i = 0; i < result.content.length; i += 1) {
-          if (result.content[i].type == "p" || result.content[i].type == "strong") {
-            mainBody.push({
-              contentType: "text",
-              content: result.content[i].text
-            })
-          } else {
-            mainBody.push({
-              contentType: "image",
-              content: result.content[i].src
-            })
-          }
-          
-        }
-        this.setData({
-          title,
-          time,
-          source,
-          pageView,
-          mainBody
-        })
+        this.setArticle(result)
       }
     })
   },
+
+  setArticle(result) {
+    let title = result.title
+    let time = result.date.slice(11, 16)
+    let source = result.source
+    if (source == "") {
+      source = "未知来源"
+    }
+    let pageView = result.readCount
+    let mainBody = []
+    for (let i = 0; i < result.content.length; i += 1) {
+      if (result.content[i].type == "p" || result.content[i].type == "strong") {
+        mainBody.push({
+          contentType: "text",
+          content: result.content[i].text
+        })
+      } else {
+        mainBody.push({
+          contentType: "image",
+          content: result.content[i].src
+        })
+      }
+
+    }
+    this.setData({
+      title,
+      time,
+      source,
+      pageView,
+      mainBody
+    })
+  }
 
 
 })

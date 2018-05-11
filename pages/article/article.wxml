@@ -1,5 +1,5 @@
 <!--pages/article/article.wxml-->
-<scroll-view scroll-y> 
+<scroll-view scroll-y class="scroll"> 
   <view class="article-head-wrapper">
     <view class="title">{{title}}</view>
     <view class="info-wrapper">

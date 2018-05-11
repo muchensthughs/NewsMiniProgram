@@ -11,7 +11,7 @@
 .scroll {
   position: relative;
   top: 30rpx;
-  height: 1090rpx;
+  height: 1075rpx;
 }
 .class {
   padding-top: 22rpx;
@@ -38,6 +38,7 @@
   height: 400rpx;
   width: 710rpx;
   left: 20rpx;
+  bottom: 20rpx;
 }
 
 .head-image {
@@ -52,7 +53,7 @@
 .head-news-title {
   display: flex;
   font-size: 36rpx;
-  line-height: 47rpx;
+  line-height: 50rpx;
   word-break: break-all;
   color: rgba(255, 255, 255, 1);
 }
@@ -71,12 +72,12 @@
 }
 .head-news-time {
   font-size: 30rpx;
-  line-height: 46rpx;
+  line-height: 42rpx;
   color: rgba(255, 255, 255, 0.7);
 }
 .head-news-source {
   font-size: 30rpx;
-  line-height: 46rpx;
+  line-height: 42rpx;
   color: rgba(255, 255, 255, 0.7);
   padding-left: 20rpx;
 }

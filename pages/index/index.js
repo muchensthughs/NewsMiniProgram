@@ -48,41 +48,41 @@ Page({
       },
       success: res => {
         let result = res.data.result
-        let newsList = []
-        let headNewsTitle = result[0].title
-        let headNewsImage = result[0].firstImage
-        let headNewsTimeStamp = result[0].date.slice(11,16)
-        let headNewsSource = result[0].source
-        let headNewsID = result[0].id
-        if (headNewsSource == '') {
-          headNewsSource = "未知来源"
-        }
-        for (let i = 1; i < result.length; i += 1) {
-          let news = result[i]
-          if (news.source == '') {
-            news.source = "未知来源"
-          }
-          newsList.push({
-            title: news.title,
-            timeStamp: news.date.slice(11, 16),
-            source: news.source,
-            imageURL: news.firstImage,
-            id: news.id
-          })
-        }
-        this.setData({
-          headNewsTitle,
-          headNewsImage,
-          headNewsTimeStamp,
-          headNewsSource,
-          headNewsID,
-          newsList: newsList
-        })
+        this.setNewsList(result)
       }
     })
   },
 
-  setNewsList() {
-    
+  setNewsList(result) {
+    let newsList = []
+    let headNewsTitle = result[0].title
+    let headNewsImage = result[0].firstImage
+    let headNewsTimeStamp = result[0].date.slice(11, 16)
+    let headNewsSource = result[0].source
+    let headNewsID = result[0].id
+    if (headNewsSource == '') {
+      headNewsSource = "未知来源"
+    }
+    for (let i = 1; i < result.length; i += 1) {
+      let news = result[i]
+      if (news.source == '') {
+        news.source = "未知来源"
+      }
+      newsList.push({
+        title: news.title,
+        timeStamp: news.date.slice(11, 16),
+        source: news.source,
+        imageURL: news.firstImage,
+        id: news.id
+      })
+    }
+    this.setData({
+      headNewsTitle,
+      headNewsImage,
+      headNewsTimeStamp,
+      headNewsSource,
+      headNewsID,
+      newsList: newsList
+    })
   }
 })
