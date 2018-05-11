@@ -83,12 +83,14 @@ Page({
     if (headNewsSource == '') {
       headNewsSource = "未知来源"
     }
+    if (headNewsImage == '') {
+      headNewsImage = '/images/default.png'
+    }
     for (let i = 1; i < result.length; i += 1) {
       let news = result[i]
       if (news.source == '') {
         news.source = "未知来源"
       }
-      console.log(news.firstImage)
       if (news.firstImage == '') {
         news.firstImage = '/images/default.png'
       }
