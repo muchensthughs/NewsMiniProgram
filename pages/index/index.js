@@ -34,7 +34,6 @@ Page({
   //if tap on an article
   onTapArticle: function(res) {
     let currentID = res.currentTarget.id
-    console.log(currentID)
     wx.navigateTo({
       url: '/pages/article/article?id=' + currentID,
     })

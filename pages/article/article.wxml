@@ -9,7 +9,7 @@
     </view>
   </view>
 
-  <view class="article-content" wx:for="{{mainBody}}">
+  <view class="article-content" wx:for="{{mainBody}}" wx:key="">
 
     <image wx:if="{{ item.contentType=='image' }}" class="image" src="{{item.content}}" mode="widthFix"></image>
     <text wx:if="{{ item.contentType=='text' }}" class="article-text">{{item.content}}\n\n</text>

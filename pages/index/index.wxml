@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="class-container">
-  <view class="class-items" wx:for="{{classes}}">
+  <view class="class-items" wx:for="{{classes}}" wx:key="">
     <view wx:if="{{item==currentClass}}" class="current-class">{{item}}</view>
     <view wx:else class="class" id="{{item}}" bindtap='onTapClass'>{{item}}</view>
   </view>
@@ -23,7 +23,7 @@
   </view>
     
   <!--other news list-->
-  <view class="news-item" wx:for="{{newsList}}" bindtap='onTapArticle' id="{{item.id}}">
+  <view class="news-item" wx:for="{{newsList}}" wx:key="" bindtap='onTapArticle' id="{{item.id}}">
 
 
     <view class="item-left-wrapper">       
