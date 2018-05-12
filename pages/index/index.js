@@ -22,6 +22,12 @@ Page({
     updating: false
   },
 
+  // refresh the page (no change in currentClass)
+  onPullDownRefresh(){
+    this.getData(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
   // if tap on class label
   onTapClass:function(res){
     let currentClass = res.target.id
@@ -39,6 +45,7 @@ Page({
     })
   },
 
+  // another way of refreshing page (no change in currentClass)
   updateNews() {
     this.setData({
       updating: true
